@@ -4,40 +4,286 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyLink</title>
+  <meta name="theme-color" content="#080b1c">
+  <title>MyLink | 나만의 링크 공간</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #f5f7fa;
-      padding: 50px 20px;
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+      color: #f8f9ff;
+      background:
+        radial-gradient(ellipse at 20% 10%, #24215a 0%, transparent 45%),
+        radial-gradient(ellipse at 85% 90%, #431d54 0%, transparent 50%),
+        #080b1c;
+      display: flex;
+      justify-content: center;
+      padding: 65px 20px 35px;
     }
+
     .container {
-      max-width: 400px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 4px 15px #ddd;
+      width: 100%;
+      max-width: 480px;
+      text-align: center;
     }
-    a {
-      display: block;
-      padding: 15px;
-      margin: 12px 0;
-      background: #526dff;
-      color: white;
+
+    .tag {
+      display: inline-block;
+      padding: 9px 17px;
+      border: 1px solid #69618d;
+      border-radius: 30px;
+      background: #ffffff0d;
+      color: #c5b6ff;
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 28px;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 43px;
+      font-weight: bold;
+      background: linear-gradient(135deg, #695aff, #e15fc1);
+      box-shadow: 0 0 45px #a36aff70;
+      border: 3px solid #ffffff33;
+    }
+
+    h1 {
+      margin: 0 0 9px;
+      font-size: 31px;
+      letter-spacing: -1px;
+    }
+
+    h1 span {
+      color: #bb94ff;
+    }
+
+    .username {
+      font-size: 14px;
+      color: #aaa7ce;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      color: #c8c7d9;
+      font-size: 14px;
+      line-height: 1.9;
+      margin-bottom: 25px;
+    }
+
+    .info {
+      display: inline-block;
+      padding: 9px 16px;
+      border: 1px solid #ffffff24;
+      border-radius: 25px;
+      background: #ffffff0a;
+      color: #dedbf6;
+      font-size: 12px;
+    }
+
+    .section-title {
+      text-align: left;
+      margin: 43px 0 18px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #a9a6c7;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 13px;
+      padding: 18px;
+      border: 1px solid #ffffff1b;
+      border-radius: 17px;
+      background: #ffffff0c;
       text-decoration: none;
-      border-radius: 10px;
+      color: white;
+      text-align: left;
+      transition: transform .25s, background .25s, border-color .25s;
+    }
+
+    .link-card:hover {
+      transform: translateY(-4px);
+      background: #ffffff18;
+      border-color: #a48dff90;
+    }
+
+    .link-card.featured {
+      background: linear-gradient(110deg, #30245caa, #57244faa);
+      border-color: #a68cff60;
+    }
+
+    .link-icon {
+      width: 47px;
+      height: 47px;
+      flex-shrink: 0;
+      border-radius: 13px;
+      background: #ffffff13;
+      border: 1px solid #ffffff1b;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+    }
+
+    .link-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .link-title {
+      font-size: 15px;
+      font-weight: 650;
+      margin-bottom: 6px;
+    }
+
+    .link-description {
+      font-size: 12px;
+      color: #aaa9c5;
+      line-height: 1.5;
+    }
+
+    .arrow {
+      font-size: 20px;
+      color: #aaa0d8;
+    }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 23px;
+      border-top: 1px solid #ffffff16;
+      color: #777691;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    footer strong {
+      color: #b99dff;
+      font-weight: 500;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding-top: 45px;
+      }
+
+      h1 {
+        font-size: 27px;
+      }
+
+      .link-card {
+        padding: 15px;
+      }
+
+      .link-title {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>MyLink</h1>
-    <p>나만의 링크 모음 페이지</p>
-    <a href="https://www.google.com">Google</a>
-    <a href="https://www.youtube.com">YouTube</a>
-    <a href="https://github.com">GitHub</a>
-  </div>
+  <main class="container">
+
+    <div class="tag">✦ MY PERSONAL LINK SPACE</div>
+
+    <div class="avatar">S</div>
+
+    <h1>Subin <span>MyLink</span></h1>
+
+    <div class="username">@psb010316-ai</div>
+
+    <p class="description">
+      안녕하세요! 👋<br>
+      나만의 링크와 프로젝트를 모아둔 공간입니다.<br>
+      편하게 둘러보세요.
+    </p>
+
+    <div class="info">✨ MyLink Portfolio</div>
+
+    <div class="section-title">✦ MY LINKS</div>
+
+    <a
+      class="link-card featured"
+      href="https://github.com/psb010316-ai"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div class="link-icon">💻</div>
+      <div class="link-content">
+        <div class="link-title">GitHub Profile</div>
+        <div class="link-description">
+          나의 GitHub 프로필과 프로젝트
+        </div>
+      </div>
+      <div class="arrow">↗</div>
+    </a>
+
+    <a
+      class="link-card"
+      href="https://github.com/psb010316-ai/mylink-next"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div class="link-icon">🚀</div>
+      <div class="link-content">
+        <div class="link-title">MyLink Project</div>
+        <div class="link-description">
+          AI를 활용해 제작한 마이링크 프로젝트
+        </div>
+      </div>
+      <div class="arrow">↗</div>
+    </a>
+
+    <a
+      class="link-card"
+      href="https://www.youtube.com"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div class="link-icon">▶️</div>
+      <div class="link-content">
+        <div class="link-title">YouTube</div>
+        <div class="link-description">
+          유튜브 바로가기
+        </div>
+      </div>
+      <div class="arrow">↗</div>
+    </a>
+
+    <a
+      class="link-card"
+      href="https://www.google.com"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div class="link-icon">🌐</div>
+      <div class="link-content">
+        <div class="link-title">Google</div>
+        <div class="link-description">
+          구글 검색 바로가기
+        </div>
+      </div>
+      <div class="arrow">↗</div>
+    </a>
+
+    <footer>
+      Made with ✦ Vibe Coding<br>
+      © 2026 <strong>MyLink</strong> · All rights reserved.
+    </footer>
+
+  </main>
 </body>
 </html>
